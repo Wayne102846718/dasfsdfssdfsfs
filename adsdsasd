@@ -93,6 +93,38 @@ b:Toggle("Toggle", function(eat)
       print("AutoEat = Disabled")
    end
 end)
+b:Label("Heal Under 100 HP", {
+   TextSize = 25;
+   TextColor = Color3.fromRGB(255, 255, 255);
+   BgColor = Color3.fromRGB(69, 69, 69);
+})
+b:Dropdown("Fruits", {"Bloodfruit" , "Berry" , "Lemon" , "Bluefruit"}, true, function(value)
+   value1 = value;
+end)
+
+b:Toggle("Toggle", function(eat)
+   
+   if eat then
+      _G.AutoEat = true
+      while task.wait(0.01) do
+         if _G.AutoEat and Character.Humanoid.Health < 100 then
+            for i = 1, 2 do
+               UseBagItem:FireServer(value1)
+            end
+         end
+      end
+   else
+      _G.AutoEat = false
+   end
+   
+
+   autoeat = eat
+   if autoeat == true then
+      print("AutoEat = Enabled")
+   else
+      print("AutoEat = Disabled")
+   end
+end)
 
 
 
@@ -271,7 +303,7 @@ e:Label("Select Fruit", {
    BgColor = Color3.fromRGB(69, 69, 69);
 })
 
-e:Dropdown("Fruits", {"Bloodfruit" , "Berry" , "Lemon" , "Bluefruit"}, true, function(value)
+e:Dropdown("Fruits", {"Bloodfruit" , "Berry" , "Lemon" , "Bluefruit", "Jelly"}, true, function(value)
    fruit = value;
 end)
 
@@ -771,7 +803,6 @@ g:Button("Place", function()
     Remote:FireServer(value104, cframe * CFrame.new(21, -3, 24), 0)
     Remote:FireServer(value104, cframe * CFrame.new(28, -3, 24), 0)
 end)
-
 
 
 
