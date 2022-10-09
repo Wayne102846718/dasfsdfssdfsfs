@@ -364,12 +364,19 @@ spawn(function()
       end
    end
 end)
+f:Label("Teleport to Void", {
+   TextSize = 25;
+   TextColor = Color3.fromRGB(255, 255, 255);
+   BgColor = Color3.fromRGB(69, 69, 69);
+})
+f:Button("TP to void", function()
+    game:GetService("TeleportService"):Teleport(10767870749, LocalPlayer)
+end)
 f:Label("Admin script that has working noclip", {
    TextSize = 15;
    TextColor = Color3.fromRGB(255, 255, 255);
    BgColor = Color3.fromRGB(69, 69, 69);
 })
-
 f:Button("Admin With Noclip Bypass", function()
     local part = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Part
 part.CanTouch = false
