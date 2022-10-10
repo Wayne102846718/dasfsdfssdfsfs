@@ -16,7 +16,12 @@ Yb,_    88             IP'`Yb                                                   
                                                 `8, ,8I                                                                                        
                                                  `Y8P"          
 ]]
-
+wait()
+game.StarterGui:SetCore("SendNotification", {
+Title = "Made By Jama#5417"; -- the title (ofc)
+Text = "https://discord.gg/3a6hNfnJbj <-- discord server"; -- what the text says (ofc)
+Duration = 10; -- how long the notification should in secounds
+})
 --// Whatever tf this is \\--
 local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Wayne102846718/dasfsdfssdfsfs/main/lib')))()
 local w = library:CreateWindow("Booga Reborn")
@@ -810,7 +815,6 @@ g:Button("Place", function()
     Remote:FireServer(value104, cframe * CFrame.new(21, -3, 24), 0)
     Remote:FireServer(value104, cframe * CFrame.new(28, -3, 24), 0)
 end)
-
 
 
 
